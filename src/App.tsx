@@ -1,11 +1,14 @@
 import "./App.css";
 
-function App() {
+const App = () => {
   return (
-    <>
-      <h1 className="text-center">Hola Prueba</h1>
-    </>
+    <div 
+      className="
+        h-screen 
+        bg-[url('./assets/images/bg-mobile-main.svg')] bg-cover bg-center bg-no-repeat 
+        md:bg-[url('./assets/images/bg-desktop-main.svg')]"
+    ></div>
   );
-}
+};
 
 export default App;
