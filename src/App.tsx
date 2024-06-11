@@ -1,17 +1,19 @@
 import "./App.css";
-import { Header, Main } from "./components/layouts";
+import { Footer, Header, Main } from "./components/layouts";
 
 const App = () => {
   return (
     <div 
       className="
         h-screen 
+        flex flex-col
         bg-[url('./assets/images/bg-mobile-main.svg')] bg-cover bg-center bg-no-repeat 
         md:bg-[url('./assets/images/bg-desktop-main.svg')]
       "
     >
       <Header />
       <Main />
+      <Footer />
     </div>
   );
 };
