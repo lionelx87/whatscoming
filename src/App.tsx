@@ -7,8 +7,8 @@ const App = () => {
       className="
         h-screen 
         flex flex-col
-        bg-[url('./assets/images/bg-mobile-main.svg')] bg-cover bg-center bg-no-repeat 
-        md:bg-[url('./assets/images/bg-desktop-main.svg')]
+        bg-[url('./assets/images/bg-dark-mobile.svg')] bg-cover bg-center bg-no-repeat 
+        md:bg-[url('./assets/images/bg-dark-desktop.svg')]
       "
     >
       <Header />
