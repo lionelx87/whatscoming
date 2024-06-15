@@ -1,10 +1,18 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Logo from '../../../src/assets/images/logo.png'
 import { MoonIcon, SunIcon } from '../icons'
 
 export const Header = () => {
 
-    const [darkMode, setDarkMode] = useState(false)
+    const [darkMode, setDarkMode] = useState(true)
+
+    useEffect(() => {
+        if(darkMode) {
+            document.documentElement.classList.add("dark")
+        } else {
+            document.documentElement.classList.remove("dark")
+        }
+    }, [darkMode])
 
     // const handleClickToggleTheme = () => {}
 
