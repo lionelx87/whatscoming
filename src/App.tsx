@@ -11,6 +11,7 @@ const App = () => {
         dark:bg-[url('./assets/images/bg-dark-mobile.svg')] bg-cover bg-center bg-no-repeat 
         md:bg-[url('./assets/images/bg-light-desktop.svg')]
         md:dark:bg-[url('./assets/images/bg-dark-desktop.svg')]
+        ease-in duration-300
       "
     >
       <Header />
