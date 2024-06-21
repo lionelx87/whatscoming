@@ -1,12 +1,18 @@
-import { SyntheticEvent, useState } from "react";
+import React, { Dispatch, SetStateAction, SyntheticEvent, useState } from "react";
 
-export const LocationSelector = () => {
+type LocationSelectorProps = {
+  setLocationSelected: Dispatch<SetStateAction<string>>;
+}
+
+export const LocationSelector: React.FC<LocationSelectorProps> = ({ setLocationSelected }) => {
   const [location, setLocation] = useState("");
 
-  const searchLocation = (e: SyntheticEvent) => {
+  const searchLocation = async (e: SyntheticEvent) => {
     e.preventDefault();
     const normalizeLocation = location.trim();
     if (!normalizeLocation) return;
+    // const weatherData = await fetchCurrentWeather(normalizeLocation);
+    setLocationSelected(normalizeLocation)
     setLocation("");
   };
   return (
