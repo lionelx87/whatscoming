@@ -1,4 +1,4 @@
-import { LocationSelector } from "../core/LocationSelector"
+import { LocationSelector } from "../modules/location/LocationSelector"
 
 export const Main = () => {
     return (
