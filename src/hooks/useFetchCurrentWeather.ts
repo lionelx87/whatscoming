@@ -6,13 +6,13 @@ import {
 } from "../models/weather.model";
 
 export const useFetchCurrentWeather = (location: string) => {
-  const [data, setData] = useState({});
+  const [data, setData] = useState<CurrentWeatherResponse | null>(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState({});
+  const [error, setError] = useState<CurrentWeatherError | null>(null);
 
   const fetchData = async (location: string) => {
     setLoading(true);
-    setError({});
+    setError(null);
     const response = await fetchCurrentWeather(location);
     if ((response as CurrentWeatherError).error) {
       setLoading(false);

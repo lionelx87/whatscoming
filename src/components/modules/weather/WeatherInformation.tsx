@@ -1,15 +1,21 @@
-import React, { Dispatch, SetStateAction } from "react";
+import {
+  CurrentWeatherError,
+  CurrentWeatherResponse,
+} from "../../../models/weather.model";
+import { Alert } from "../../ui";
 
 type WeatherInformationProps = {
-    data: Dispatch<SetStateAction<unknown>>;
-    error: Dispatch<SetStateAction<unknown>>;
-  }
-  
-export const WeatherInformation: React.FC<WeatherInformationProps> = ({ data, error }) => {
-    return (
-        <div className="w-full flex-1 text-white">
-            {JSON.stringify(error)}
-            {JSON.stringify(data)}
-        </div>
-    )
-}
+  data: CurrentWeatherResponse;
+  error: CurrentWeatherError;
+};
+
+export const WeatherInformation: React.FC<WeatherInformationProps> = ({
+  data,
+  error,
+}) => {
+  return (
+    <div className="w-full flex-1 text-white">
+      { error && <Alert message={error.error.message} /> }
+    </div>
+  );
+};
