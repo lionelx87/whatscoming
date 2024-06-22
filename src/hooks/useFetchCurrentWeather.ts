@@ -13,6 +13,7 @@ export const useFetchCurrentWeather = (location: string) => {
   const fetchData = async (location: string) => {
     setLoading(true);
     setError(null);
+    setData(null);
     const response = await fetchCurrentWeather(location);
     if ((response as CurrentWeatherError).error) {
       setLoading(false);

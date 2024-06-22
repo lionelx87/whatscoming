@@ -11,7 +11,7 @@ export const WeatherContainer = () => {
     <div className="flex w-full flex-1 flex-col items-center justify-center gap-4">
       <LocationSelector setLocationSelected={setLocationSelected} />
       { loading && <Loading /> }
-      { locationSelected && <WeatherInformation data={data} error={error} /> }
+      { locationSelected && <WeatherInformation data={data} error={error} loading={loading} /> }
     </div>
   );
 };
