@@ -1,5 +1,6 @@
 import React from "react";
 import { CurrentWeatherResponse } from "../../../models/weather.model";
+import { TempMaxIcon } from "../../icons/TempMaxIcon";
 
 type WeatherDisplayProps = {
   data: CurrentWeatherResponse;
@@ -20,14 +21,18 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ data }) => {
         </div>
       </div>
     </div>
-    <div className="mt-4 dark:bg-custom-600 dark:text-custom-400 rounded-lg">
-      <div>
-        <div>
-          <img src="" alt="" />
-          <span>Prueba</span>
-        </div>
-        <div>26</div>
-      </div>  
+    <div className="flex flex-col gap-3 mt-4 dark:bg-custom-600 dark:text-custom-400 rounded-lg p-2">
+      {
+        [0,1,2,3,4].map((elem) => (
+          <div key={elem} className="flex items-center justify-between border-b border-custom-800 pb-2 last:border-b-0 last:pb-0">
+            <div className="flex items-center gap-3">
+              <TempMaxIcon />
+              <span>Temp. Máxima</span>
+            </div>
+            <div>26</div>
+          </div>
+        ))
+      }  
     </div>    
     </>
   );
