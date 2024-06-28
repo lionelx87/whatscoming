@@ -1,2 +1,7 @@
 export * from './MoonIcon'
 export * from './SunIcon'
+export * from './TempMaxIcon'
+export * from './TempMinIcon'
+export * from './HumidityIcon'
+export * from './CloudIcon'
+export * from './WindIcon'
