@@ -71,6 +71,18 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ data }) => {
           </div>
         ))}
       </div>
+      <div className="mt-4 flex justify-between gap-3 rounded-lg p-2 dark:bg-custom-600 dark:text-custom-400">
+        {
+          [0, 1, 2, 3, 4].map((elem) => (
+          <div key={elem} className="flex flex-col items-center gap-2">
+              <span>28/05</span>
+              <img src={data.current.condition.icon} alt="Icono" />
+              <span className="text-red-400">MAX</span>
+              <span className="text-blue-500">MIN</span>
+            </div>
+          ))
+        }
+      </div>
     </>
   );
 };
