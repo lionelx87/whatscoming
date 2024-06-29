@@ -17,27 +17,27 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ data }) => {
       {
         title: "Temp. Máxima",
         Icon: <TempMaxIcon />,
-        value: 26,
+        value: `${data.forecast.forecastday[0].day.maxtemp_c}° C`,
       },
       {
         title: "Temp. Mínima",
         Icon: <TempMinIcon />,
-        value: 26,
+        value: `${data.forecast.forecastday[0].day.mintemp_c}° C`,
       },
       {
         title: "Humedad",
         Icon: <HumidityIcon />,
-        value: 26,
+        value: `${data.current.humidity} %`,
       },
       {
         title: "Nublado",
         Icon: <CloudIcon />,
-        value: 26,
+        value: `${data.current.cloud} %`,
       },
       {
         title: "Viento",
         Icon: <WindIcon />,
-        value: 26,
+        value: `${data.current.wind_kph} km/h`,
       },
     ];
   };
