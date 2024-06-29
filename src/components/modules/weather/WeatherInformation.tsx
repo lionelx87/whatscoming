@@ -1,13 +1,10 @@
-import {
-  CurrentWeatherError,
-  CurrentWeatherResponse,
-} from "../../../models/weather.model";
+import { ForecastWeatherError, ForecastWeatherResponse } from "../../../models/forecast-weather.model";
 import { Alert } from "../../ui";
 import { WeatherDisplay } from "./WeatherDisplay";
 
 type WeatherInformationProps = {
-  data: CurrentWeatherResponse;
-  error: CurrentWeatherError;
+  data: ForecastWeatherResponse;
+  error: ForecastWeatherError;
   loading: boolean;
 };
 

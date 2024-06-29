@@ -1,5 +1,5 @@
 import React from "react";
-import { CurrentWeatherResponse } from "../../../models/weather.model";
+import { ForecastWeatherResponse } from "../../../models/forecast-weather.model";
 import {
   CloudIcon,
   HumidityIcon,
@@ -9,7 +9,7 @@ import {
 } from "../../icons";
 
 type WeatherDisplayProps = {
-  data: CurrentWeatherResponse;
+  data: ForecastWeatherResponse;
 };
 export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ data }) => {
   const getDetailsData = () => {

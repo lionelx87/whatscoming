@@ -3,7 +3,7 @@ import { fetchCurrentWeather } from "../components/modules/api/weatherApi";
 import {
   CurrentWeatherError,
   CurrentWeatherResponse,
-} from "../models/weather.model";
+} from "../models/current-weather.model";
 
 export const useFetchCurrentWeather = (location: string) => {
   const [data, setData] = useState<CurrentWeatherResponse | null>(null);
