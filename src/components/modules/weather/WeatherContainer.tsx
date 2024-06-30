@@ -8,10 +8,12 @@ export const WeatherContainer = () => {
   const [locationSelected, setLocationSelected] = useState("");
   const { data, loading, error } = useFetchforecastWeather(locationSelected);
   return (
-    <div className="flex w-full flex-1 flex-col items-center justify-center gap-4">
+    <div className="flex w-full flex-1 flex-col items-center justify-center gap-4 lg:gap-16">
       <LocationSelector setLocationSelected={setLocationSelected} />
-      { loading && <Loading /> }
-      { locationSelected && <WeatherInformation data={data} error={error} loading={loading} /> }
+      {loading && <Loading />}
+      {locationSelected && (
+        <WeatherInformation data={data} error={error} loading={loading} />
+      )}
     </div>
   );
 };

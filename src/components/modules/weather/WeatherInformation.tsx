@@ -14,7 +14,7 @@ export const WeatherInformation: React.FC<WeatherInformationProps> = ({
   loading,
 }) => {
   return (
-    <div className="w-full flex-1 text-white">
+    <div className="w-full flex-1 text-white flex">
       { !loading && error && <Alert message={error.error.message} /> }
       { !loading && data && <WeatherDisplay data={data} />}
     </div>
