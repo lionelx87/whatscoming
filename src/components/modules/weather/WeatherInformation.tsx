@@ -3,8 +3,8 @@ import { Alert } from "../../ui";
 import { WeatherDisplay } from "./WeatherDisplay";
 
 type WeatherInformationProps = {
-  data: ForecastWeatherResponse;
-  error: ForecastWeatherError;
+  data: ForecastWeatherResponse | null;
+  error: ForecastWeatherError | null;
   loading: boolean;
 };
 
