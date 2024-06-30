@@ -1,5 +1,6 @@
 import React from "react";
 import { ForecastWeatherResponse } from "../../../models/forecast-weather.model";
+import { dateTimeWithFormat, dateWithFormat } from "../../../utils";
 import {
   CloudIcon,
   HumidityIcon,
@@ -7,7 +8,6 @@ import {
   TempMinIcon,
   WindIcon,
 } from "../../icons";
-import { dateTimeWithFormat, dateWithFormat } from "../../../utils";
 
 type WeatherDisplayProps = {
   data: ForecastWeatherResponse;
@@ -47,7 +47,9 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ data }) => {
     <>
       <div className="flex h-1/3 flex-col rounded-lg bg-[url('./assets/images/weather-bg-mobile.svg')] bg-cover bg-center bg-no-repeat">
         <h1 className="pt-2 text-center text-lg">{data.location.name}</h1>
-        <p className="text-md text-center">{dateTimeWithFormat(data.location.localtime)}</p>
+        <p className="text-md text-center">
+          {dateTimeWithFormat(data.location.localtime)}
+        </p>
         <div className="flex flex-1 items-center justify-between px-4">
           <div>
             <h3 className="text-4xl">{data.current.temp_c} °C</h3>
@@ -58,7 +60,7 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ data }) => {
           </div>
         </div>
       </div>
-      <div className="mt-4 flex flex-col gap-3 rounded-lg p-2 dark:bg-custom-600 dark:text-custom-400">
+      <div className="mt-4 flex flex-col gap-3 rounded-lg bg-blue-800 p-2 dark:bg-custom-600 dark:text-custom-400">
         {getDetailsData().map((elem) => (
           <div
             key={elem.title}
@@ -72,7 +74,7 @@ export const WeatherDisplay: React.FC<WeatherDisplayProps> = ({ data }) => {
           </div>
         ))}
       </div>
-      <div className="mt-4 flex justify-between gap-3 rounded-lg p-2 dark:bg-custom-600 dark:text-custom-400">
+      <div className="mt-4 flex justify-between gap-3 rounded-lg bg-blue-800 p-2 dark:bg-custom-600 dark:text-custom-400">
         {data.forecast.forecastday.map((elem) => (
           <div
             key={elem.date_epoch}
