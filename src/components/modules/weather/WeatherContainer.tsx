@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useFetchforecastWeather } from "../../../hooks/useFetchForecastWeather";
-import { Loading } from "../../ui";
+import { Alert, Loading } from "../../ui";
 import { LocationSelector } from "./LocationSelector";
-import { WeatherInformation } from "./WeatherInformation";
+import { WeatherDetails } from "./WeatherDetails";
+import { WeatherForecast } from "./WeatherForecast";
+import { WeatherToday } from "./WeatherToday";
 
 export const WeatherContainer = () => {
   const [locationSelected, setLocationSelected] = useState("");
@@ -12,7 +14,18 @@ export const WeatherContainer = () => {
       <LocationSelector setLocationSelected={setLocationSelected} />
       {loading && <Loading />}
       {locationSelected && (
-        <WeatherInformation data={data} error={error} loading={loading} />
+        <div className="flex w-full flex-1 text-white">
+          {!loading && error && <Alert message={error.error.message} />}
+          {!loading && data && (
+            <div className="flex-1 lg:mt-10 lg:flex lg:gap-8">
+              <WeatherToday data={data} />
+              <div className="duration-300 ease-in lg:flex lg:h-[32rem] lg:flex-1 lg:flex-col">
+                <WeatherDetails data={data} />
+                <WeatherForecast data={data} />
+              </div>
+            </div>
+          )}
+        </div>
       )}
     </div>
   );

@@ -1,7 +1,5 @@
 export * from './LocationSelector'
 export * from './WeatherContainer'
-export * from './WeatherDisplay'
-export * from './WeatherInformation'
 export * from './WeatherDetails'
 export * from './WeatherForecast'
 export * from './WeatherToday'
