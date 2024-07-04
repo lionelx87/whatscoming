@@ -11,7 +11,6 @@ export const LocationSelector: React.FC<LocationSelectorProps> = ({ setLocationS
     e.preventDefault();
     const normalizeLocation = location.trim();
     if (!normalizeLocation) return;
-    // const weatherData = await fetchCurrentWeather(normalizeLocation);
     setLocationSelected(normalizeLocation)
     setLocation("");
   };
