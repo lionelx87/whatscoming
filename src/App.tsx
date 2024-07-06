@@ -5,7 +5,7 @@ const App = () => {
   return (
     <div 
       className="
-        h-screen 
+        min-h-screen
         flex flex-col
         bg-[url('./assets/images/bg-light-mobile.svg')]
         dark:bg-[url('./assets/images/bg-dark-mobile.svg')] bg-cover bg-center bg-no-repeat 

@@ -20,7 +20,7 @@ export const WeatherContainer = () => {
         <div className="flex w-full flex-1 text-white">
           {!loading && error && <Alert message={message} />}
           {!loading && isReadyDataTime && (
-            <div className="flex-1 lg:mt-10 lg:flex lg:gap-8">
+            <div className="flex flex-col flex-1 lg:mt-10 lg:flex-row lg:gap-8">
               <WeatherToday
                 name={location.name}
                 localtime={location.localtime}

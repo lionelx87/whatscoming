@@ -14,7 +14,7 @@ export const WeatherToday: React.FC<WeatherTodayProps> = ({
   condition,
 }) => {
   return (
-    <div className="flex h-1/3 flex-col rounded-lg bg-[url('./assets/images/weather-bg-mobile.svg')] bg-cover bg-center bg-no-repeat lg:h-[32rem] lg:flex-1 lg:p-6">
+    <div className="flex h-44 flex-col rounded-lg bg-[url('./assets/images/weather-bg-mobile.svg')] bg-cover bg-center bg-no-repeat lg:h-[32rem] lg:flex-1 lg:p-6">
       <h1 className="pt-2 text-center text-lg lg:mb-2 lg:text-5xl">{name}</h1>
       <p className="text-md text-center lg:text-xl">
         {dateTimeWithFormat(localtime)}
