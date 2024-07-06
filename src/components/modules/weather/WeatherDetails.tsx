@@ -1,4 +1,3 @@
-import { ForecastWeatherResponse } from "../../../models/forecast-weather.model";
 import {
   CloudIcon,
   HumidityIcon,
@@ -8,35 +7,45 @@ import {
 } from "../../icons";
 
 type WeatherDetailsProps = {
-  data: ForecastWeatherResponse;
+  maxtemp_c: number;
+  mintemp_c: number;
+  humidity: number;
+  cloud: number;
+  wind_kph: number;
 };
 
-export const WeatherDetails: React.FC<WeatherDetailsProps> = ({ data }) => {
+export const WeatherDetails: React.FC<WeatherDetailsProps> = ({
+  maxtemp_c,
+  mintemp_c,
+  humidity,
+  cloud,
+  wind_kph,
+}) => {
   const detailsData = [
     {
       title: "Temp. Máxima",
       Icon: <TempMaxIcon />,
-      value: `${data.forecast.forecastday[0].day.maxtemp_c}° C`,
+      value: `${maxtemp_c}° C`,
     },
     {
       title: "Temp. Mínima",
       Icon: <TempMinIcon />,
-      value: `${data.forecast.forecastday[0].day.mintemp_c}° C`,
+      value: `${mintemp_c}° C`,
     },
     {
       title: "Humedad",
       Icon: <HumidityIcon />,
-      value: `${data.current.humidity} %`,
+      value: `${humidity} %`,
     },
     {
       title: "Nublado",
       Icon: <CloudIcon />,
-      value: `${data.current.cloud} %`,
+      value: `${cloud} %`,
     },
     {
       title: "Viento",
       Icon: <WindIcon />,
-      value: `${data.current.wind_kph} km/h`,
+      value: `${wind_kph} km/h`,
     },
   ];
   return (
